@@ -7399,6 +7399,10 @@ a.button {
     text-align: center;
     color: #fff;
     padding-bottom: 20px; }
+  .menu .scroll-content .points {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 20px; }
 
 .login {
   background: #e74c3c;

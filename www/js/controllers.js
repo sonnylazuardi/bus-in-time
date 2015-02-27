@@ -60,6 +60,12 @@ angular.module('busintime.controllers', [])
   }
 })
 
-.controller('ShareCtrl', function($scope, $state) {
-  
+.controller('ShareCtrl', function($scope, $state, $ionicHistory) {
+  $scope.back = function() {
+    console.log('back');
+    $ionicHistory.goBack();
+  }
+  $scope.start = function() {
+
+  }
 });
