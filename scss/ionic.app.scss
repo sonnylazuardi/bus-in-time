@@ -15,6 +15,15 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$stable:                          #e74c3c !default;
+$button-stable-bg:                $stable !default;
+$button-stable-text:              #fff !default;
+$button-stable-border:            #e95c4e !default;
+$button-stable-active-bg:         #e74c3c !default;
+$button-stable-active-border:     #e95c4e !default;
+
+$button-light-active-border:      transparent !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
