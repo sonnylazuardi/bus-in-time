@@ -1,12 +1,4 @@
 {
-  "name": "tabs",
-  "app_id": "",
-  "gulpStartupTasks": [
-    "sass",
-    "watch"
-  ],
-  "watchPatterns": [
-    "www/**/*",
-    "!www/lib/**/*"
-  ]
+  "name": "busintime",
+  "app_id": ""
 }
