@@ -7474,9 +7474,8 @@ a.button {
   position: relative;
   margin: 40px auto;
   max-width: 200px;
-<<<<<<< HEAD
-  height: 200px;
-  margin-top: 100px; }
+  height: 300px;
+  margin-top: 80px; }
 
 .angular-google-map-container {
   height: 150px; }
@@ -7507,7 +7506,9 @@ a.button {
 
 .footer-track {
   background-color: #e74c3c;
-  padding: 10px; }
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px; }
   .footer-track * {
     color: white; }
 
@@ -7552,9 +7553,6 @@ a.button {
 
 .pull-right {
   float: right; }
-=======
-  height: 300px;
-  margin-top: 80px; }
 
 .text-big {
   font-size: 24px;
@@ -7562,4 +7560,3 @@ a.button {
 
 .coins {
   margin-bottom: 40px; }
->>>>>>> 6388bc7974182a4b9afcaf26239b7cc4a7bd5886
