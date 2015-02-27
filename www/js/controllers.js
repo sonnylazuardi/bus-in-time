@@ -34,7 +34,54 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 })
 
 .controller('GetBusCtrl', function($scope) {
+
   $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 15 };
+
+  $scope.trayeks = [
+    {
+      from : "Cicaheum",
+      to : "Cibeureum",
+      time : {min : 4, sec : 21},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      from : "Cicaheum",
+      to : "Cibeureum",
+      time : {min : 8, sec : 15},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      from : "Cicaheum",
+      to : "Leuwi Panjang",
+      time : {min : 5, sec : 25},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      from : "Leuwi Panjang",
+      to : "Cicaheum",
+      time : {min : 8, sec : 31},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      from : "Cibiru",
+      to : "Kebon Kelapa",
+      time : {min : 1, sec : 22},
+      type : "AC",
+      price : "Rp 3.500"
+    },
+    {
+      from : "Kebon Kelapa",
+      to : "Cibiru",
+      time : {min : 6, sec : 21},
+      type : "AC",
+      price : "Rp 3.500"
+    },
+  ];
+
   $scope.options = {
     scrollwheel: false,
     overviewMapControl: false,
@@ -45,6 +92,7 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     streetViewControl: false,
     zoomControl: false
   };
+
   $scope.marker = {
     id: 0,
     coords: {
@@ -53,6 +101,34 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     },
     options: { draggable: false },
   };
+
+  var a = setInterval(function () {
+    for (var i = $scope.trayeks.length - 1; i >= 0; i--) {
+      if ($scope.trayeks[i].time.sec > 0) {
+        $scope.trayeks[i].time.sec--;
+      }
+      else {
+        if ($scope.trayeks[i].time.min > 0) {
+          $scope.trayeks[i].time.sec = 59;  
+          $scope.trayeks[i].time.min--;
+        }
+        else {
+          // do nothing
+        }
+      }
+      console.log($scope.trayeks[i].time);
+    };
+    $scope.$apply();
+  }, 1000);
+  a.des
+
+  $scope.numbering = function(num) {
+    if (num<10) {
+      return '0'+num;
+    }
+    return num
+  }
+
 })
 
 .controller('BusTrackCtrl', function($scope) {
