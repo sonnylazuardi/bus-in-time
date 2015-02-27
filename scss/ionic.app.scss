@@ -138,6 +138,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
             color: #fff;
             padding-bottom: 20px;
         }
+        .points {
+            text-align: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
     }
 }
 
@@ -146,12 +151,18 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     height: 100%;
 }
 
+.share {
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+}
+
 .logo-bit {
     position: relative;
     margin: 40px auto;
     max-width: 200px;
-    height: 200px;
-    margin-top: 100px;
+    height: 300px;
+    margin-top: 80px;
     // margin-bottom: 10px;
 }
 
@@ -207,3 +218,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .pull-left              {float: left}
 .pull-right             {float: right}
+
+.text-big {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.coins {
+    margin-bottom: 40px;
+}

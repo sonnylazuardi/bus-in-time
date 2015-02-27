@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="false" ng-controller="MenuCtrl">
+<ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button class="button button-icon ion-android-arrow-back">
@@ -25,11 +25,18 @@
           <div class="name">
             Sonny Lazuardi
           </div>
+          <div class="points">
+            <span class="text-big">2000</span> coins <br>
+            in <span class="text-big">50</span> km 
+          </div>
         </div>
       </div>
       <ion-list>
-        <ion-item nav-clear menu-close href="#/app/playlists">
+        <ion-item nav-clear menu-close ref="busintime.playlists">
           <a class="button button-icon icon-left ion-help-circled">About</a>
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="busintime.share">
+          <a class="button button-icon icon-left ion-android-share-alt">Share</a>
         </ion-item>
         <ion-item nav-clear menu-close ng-click="logout()">
           <a class="button button-icon icon-left ion-android-exit">Logout</a>

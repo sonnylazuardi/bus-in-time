@@ -7456,15 +7456,25 @@ a.button {
     text-align: center;
     color: #fff;
     padding-bottom: 20px; }
+  .menu .scroll-content .points {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 20px; }
 
 .login {
   background: #e74c3c;
   height: 100%; }
 
+.share {
+  color: #fff;
+  text-align: center;
+  padding-top: 50px; }
+
 .logo-bit {
   position: relative;
   margin: 40px auto;
   max-width: 200px;
+<<<<<<< HEAD
   height: 200px;
   margin-top: 100px; }
 
@@ -7542,3 +7552,14 @@ a.button {
 
 .pull-right {
   float: right; }
+=======
+  height: 300px;
+  margin-top: 80px; }
+
+.text-big {
+  font-size: 24px;
+  font-weight: 900; }
+
+.coins {
+  margin-bottom: 40px; }
+>>>>>>> 6388bc7974182a4b9afcaf26239b7cc4a7bd5886

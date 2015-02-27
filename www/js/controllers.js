@@ -90,4 +90,14 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
   $scope.logout = function() {
     $state.go('login');
   }
+})
+
+.controller('ShareCtrl', function($scope, $state, $ionicHistory) {
+  $scope.back = function() {
+    console.log('back');
+    $ionicHistory.goBack();
+  }
+  $scope.start = function() {
+
+  }
 });

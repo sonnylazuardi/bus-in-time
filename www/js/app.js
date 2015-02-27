@@ -28,12 +28,22 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'uiGmapgoogle-map
     controller: 'LoginCtrl'
   })
 
-
   .state('busintime', {
     url: "/busintime",
     abstract: true,
     templateUrl: "templates/menu.html",
     controller: 'MenuCtrl'
+
+  })
+
+  .state('busintime.share', {
+    url: "/share",
+    views: {
+      'menuContent' : {
+        templateUrl: "templates/share.html",
+        controller: 'ShareCtrl'
+      }
+    }
   })
 
   .state('busintime.search', {
@@ -54,15 +64,15 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'uiGmapgoogle-map
       }
     }
   })
-    .state('busintime.getbus', {
-      url: "/getbus",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/getbus.html",
-          controller: 'GetBusCtrl'
-        }
+  .state('busintime.getbus', {
+    url: "/getbus",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/getbus.html",
+        controller: 'GetBusCtrl'
       }
-    })
+    }
+  })
 
   .state('busintime.single', {
     url: "/playlists/:playlistId",
