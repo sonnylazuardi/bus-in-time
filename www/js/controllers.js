@@ -34,7 +34,29 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 })
 
 .controller('GetBusCtrl', function($scope) {
-  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 4 };
+  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 15 };
+  $scope.options = {
+    scrollwheel: false,
+    overviewMapControl: false,
+    panControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    mapTypeControl: false,
+    streetViewControl: false,
+    zoomControl: false
+  };
+  $scope.marker = {
+    id: 0,
+    coords: {
+      latitude: 40.1451,
+      longitude: -99.6680
+    },
+    options: { draggable: false },
+  };
+})
+
+.controller('BusTrackCtrl', function($scope) {
+  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 15 };
   $scope.options = {
     scrollwheel: false,
     overviewMapControl: false,
@@ -56,4 +78,16 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('LoginCtrl', function($scope, $state) {
+  $scope.login = function() {
+    $state.go('busintime.getbus');
+  }
+})
+
+.controller('MenuCtrl', function($scope, $state) {
+  $scope.logout = function() {
+    $state.go('login');
+  }
 });

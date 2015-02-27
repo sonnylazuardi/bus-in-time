@@ -22,12 +22,18 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'uiGmapgoogle-map
 
 .config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
   $stateProvider
+  .state('login', {
+    url: "/login",
+    templateUrl: "templates/login.html",
+    controller: 'LoginCtrl'
+  })
+
 
   .state('busintime', {
     url: "/busintime",
     abstract: true,
     templateUrl: "templates/menu.html",
-    controller: 'BusInTimeCtrl'
+    controller: 'MenuCtrl'
   })
 
   .state('busintime.search', {
@@ -39,11 +45,12 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'uiGmapgoogle-map
     }
   })
 
-  .state('busintime.browse', {
-    url: "/browse",
+  .state('busintime.bustrack', {
+    url: "/bustrack",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/bustrack.html",
+        controller: 'BusTrackCtrl'
       }
     }
   })
@@ -66,8 +73,8 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'uiGmapgoogle-map
       }
     }
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/busintime/getbus');
+
+  $urlRouterProvider.otherwise('/login');
 
   uiGmapGoogleMapApiProvider.configure({
       key: 'AIzaSyBSZectYqRVjFs7LZMb27VRsS00A4xZ6Bs',

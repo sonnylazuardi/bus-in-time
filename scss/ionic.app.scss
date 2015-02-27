@@ -15,8 +15,195 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+$stable:                          #e74c3c !default;
+$stable-dark:					  #c0392b !default;
+$button-stable-bg:                $stable !default;
+$button-stable-text:              #fff !default;
+$button-stable-border:            #e95c4e !default;
+$button-stable-active-bg:         #e74c3c !default;
+$button-stable-active-border:     #e95c4e !default;
+
+$button-light-active-border:      transparent !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Thin_0.ttf')  format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-ExtraLight_0.ttf')  format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Light_0.ttf')  format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Regular_0.ttf')  format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Medium_0.ttf')  format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-SemiBold_0.ttf')  format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Bold_0.ttf')  format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-ExtraBold_0.ttf')  format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Heavy_0.ttf')  format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Raleway' !important;
+}
+
+.logo {
+    height: 43px;
+    background-size: cover;
+}
+
+.menu {
+    .bar-stable {
+        border: none;
+    }
+    .scroll-content {
+        background: $stable-dark;
+
+        .item, .item-content {
+            background-color: transparent !important;
+            border: none !important;
+            color: #fff;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .profile {
+            position: relative;
+            margin: 30px auto;
+            max-width: 100px;
+            height: 100px;
+            background: #ccc;
+            margin-bottom: 10px;
+            border-radius: 50%;
+
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        .name {
+            text-align: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.login {
+    background: $stable;
+    height: 100%;
+}
+
+.logo-bit {
+    position: relative;
+    margin: 40px auto;
+    max-width: 200px;
+    height: 200px;
+    margin-top: 100px;
+    // margin-bottom: 10px;
+}
+
+.angular-google-map-container { height: 150px; }
+
+.content-fullscreen {
+	.scroll { height: 100%;}
+	.angular-google-map { height: 100%; }
+	.angular-google-map-container {height: 100vh;}
+}
+
+.marker-labels {
+    color: red;
+    background-color: white;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 40px;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+.angular-google-map {
+	display: block;
+}
+.content-red {
+	background-color: $stable;
+}
+
+.footer-track {
+	background-color: $stable;
+	height: 100px;
+	padding: 10px;
+	* {
+		color: white;
+	}
+	margin-bottom : 10px;
+}
+
+.text-left              {text-align: left}
+.text-right             {text-align: right}
+.text-center            {text-align: center}
+
+.text-light             {color : $light}
+.text-stable            {color : $stable}
+.text-positive          {color : $positive}
+.text-calm              {color : $calm}
+.text-balanced          {color : $balanced}
+.text-energized         {color : $energized}
+.text-assertive         {color : $assertive}
+.text-royal             {color : $royal}
+.text-dark              {color : $dark}
+
+.pull-left              {float: left}
+.pull-right             {float: right}
