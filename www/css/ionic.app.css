@@ -7507,10 +7507,12 @@ a.button {
 .footer-track {
   background-color: #e74c3c;
   height: 100px;
-  padding: 10px;
-  margin-bottom: 10px; }
+  padding: 10px; }
   .footer-track * {
-    color: white; }
+    color: white;
+    text-align: center; }
+  .footer-track h2 {
+    line-height: 20px; }
 
 .text-left {
   text-align: left; }

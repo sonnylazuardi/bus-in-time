@@ -198,8 +198,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	padding: 10px;
 	* {
 		color: white;
+		text-align: center;
 	}
-	margin-bottom : 10px;
+	h2 {
+		line-height: 20px;
+	}
 }
 
 .text-left              {text-align: left}

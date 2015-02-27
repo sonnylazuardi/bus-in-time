@@ -56,7 +56,12 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 })
 
 .controller('BusTrackCtrl', function($scope) {
-  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 15 };
+  $scope.pin = {
+    bus : "img/pin-bus.png",
+    passenger : "img/pin-passenger.png"
+  };
+
+  $scope.map = {center: {latitude: -6.902267, longitude: 107.611600 }, zoom: 16 };
   $scope.options = {
     scrollwheel: false,
     overviewMapControl: false,
@@ -67,11 +72,29 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     streetViewControl: false,
     zoomControl: false
   };
-  $scope.marker = {
+  $scope.marker_pos = {
     id: 0,
     coords: {
-      latitude: 40.1451,
-      longitude: -99.6680
+      latitude: -6.902267,
+      longitude: 107.611600
+    },
+    options: { draggable: false },
+  };
+
+  $scope.marker_bus1 = {
+    id: 1,
+    coords: {
+      latitude: -6.904626,
+      longitude: 107.610651
+    },
+    options: { draggable: false },
+  };
+
+  $scope.marker_bus2 = {
+    id: 2,
+    coords: {
+      latitude: -6.906579,
+      longitude: 107.608285
     },
     options: { draggable: false },
   };
