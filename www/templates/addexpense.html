@@ -1,0 +1,55 @@
+<ion-view view-title="Add Expense" hide-back-button="false">
+  <ion-content>
+    <div class="form-add-container">
+      <div class="head-description">
+        Please tell us about your expense
+      </div>
+      <div class="list">
+        <label class="item item-icon-left item-input item-stacked-label">
+          <i class='icon ion-ios-calculator-outline'></i>
+          <span class='input-label'>Amount</span>
+          <input type="number" placeholder="Amount">
+        </label>
+        <label class="item item-icon-left item-input item-stacked-label">
+          <i class='icon ion-ios-compose-outline'></i>
+          <span class='input-label'>Short Description</span>
+          <input type="text" placeholder="Short Description">
+        </label>
+        <label class="item item-icon-left item-input item-stacked-label" ng-click='showCategories()'>
+          <i class='icon ion-ios-folder-outline'></i>
+          <span class='input-label'>Category</span>
+          <div class="text text-goodism-green"><i class='ion-ios-wineglass'></i> Food</div>
+        </label>
+        <label class="item item-icon-left item-input item-stacked-label" ng-click="showSources()">
+          <i class='icon ion-ios-download-outline'></i>
+          <span class='input-label'>Source</span>
+          <div class="text"><i class='ion-cash'></i> Cash</div>
+        </label>
+        <div class="expense-animate-show" ng-show="isShowFull">
+          <label class="item item-icon-left item-input item-stacked-label">
+            <i class='icon ion-ios-calendar-outline'></i>
+            <span class='input-label'>Date</span>
+            <input type="date" placeholder="Date">
+          </label>
+          <label class="item item-icon-left item-input item-stacked-label">
+            <i class='icon ion-ios-time-outline'></i>
+            <span class='input-label'>Time</span>
+            <input type="time" placeholder="Time">
+          </label>
+        </div>
+        <div class="item item-more">
+          <span class="ion-chevron-down" ng-click="SwitchShow()" ng-show="!isShowFull">
+          </span>
+          <span class="ion-chevron-up" ng-click="SwitchShow()" ng-show="isShowFull">
+          </span>
+        </div>
+      </div>
+      <div class="form-button">
+        <button class="button button-stable">
+          Save
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

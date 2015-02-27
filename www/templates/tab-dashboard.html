@@ -1,0 +1,173 @@
+<ion-view view-title="Dashboard">
+  <ion-content>
+    <div class="budget-jumbo-top ">
+      <ion-slide-box show-pager="false">
+        <ion-slide>
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="col col-80">
+              <div class="account">
+                CASH
+              </div>
+              <div class="money">
+                Rp 2.000.000
+              </div>
+            </div>
+            <div class="col">
+              <div class="right-button">
+                <span class="ion-chevron-right">
+                </span>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="row">
+            <div class="col">
+              <div class="left-button">
+                <span class="ion-chevron-left">
+                </span>
+              </div>
+            </div>
+            <div class="col col-80">
+              <div class="account">
+                BANK
+              </div>
+              <div class="money">
+                Rp 15.000.000
+              </div>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div class="overview-container headline">
+      <div class="divider-button">
+        <div class="divider">
+        </div>
+        <a nav-direction="forward" href="#/expense/add">
+          <button class="button icon-button">
+            <span class="ion-ios-plus-empty">
+              
+            </span>
+          </button>
+        </a>
+      </div>
+      <div class="category-container">
+        <div class="category-item card">
+          <div class="item food-item">
+            <div class="category-name">
+              Food
+            </div> 
+            <div class="money">
+              Rp 500.000
+            </div>
+          </div>
+        </div>
+        <div class="category-item card">
+          <div class="item food-item">
+            <div class="category-name">
+              Transportation
+            </div> 
+            <div class="money">
+              Rp 500.000
+            </div>
+          </div>
+        </div>
+        <div class="category-item card">
+          <div class="item food-item">
+            <div class="category-name">
+              Entertainment
+            </div> 
+            <div class="money">
+              Rp 500.000
+            </div>
+          </div>
+        </div>
+        <div class="category-item card">
+          <div class="item food-item">
+            <div class="category-name">
+              Other
+            </div> 
+            <div class="money">
+              Rp 500.000
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="daily-expense-container">
+      <ion-list class="list">
+
+        <div class="item item-divider">
+          Daily Expense
+        </div>
+
+        <ion-item class="item daily-item" href="#">
+          <div class="row">
+            <div class="col-20">
+              <div class="icon-category">
+                <span>
+
+                </span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="short-description">
+                Ayam Goreng Sabana
+              </div>
+              <div class="money text-assertive">
+                - Rp 32.000
+              </div>
+              <div class="date">
+                17.00
+              </div>
+            </div>
+          </div>
+          <ion-option-button class="button-light button-small-width"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-assertive button-small-width"
+                             ng-click="share(item)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+        
+        <ion-item class="item daily-item" href="#">
+          <div class="row">
+            <div class="col-20">
+              <div class="icon-category">
+                <span>
+
+                </span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="short-description">
+                Nasi Goren Bu Siti
+              </div>
+              <div class="money text-assertive">
+                - Rp 21.000
+              </div>
+              <div class="date">
+                21.00
+              </div>
+            </div>
+          </div>
+          <ion-option-button class="button-light button-small-width"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-assertive button-small-width"
+                             ng-click="share(item)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>
