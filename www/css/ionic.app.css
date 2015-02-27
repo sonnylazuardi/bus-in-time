@@ -7390,7 +7390,11 @@ a.button {
     max-width: 100px;
     height: 100px;
     background: #ccc;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    border-radius: 50%; }
+    .menu .scroll-content .profile img {
+      width: 100%;
+      border-radius: 50%; }
   .menu .scroll-content .name {
     text-align: center;
     color: #fff;
