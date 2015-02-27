@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('BusInTimeCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -33,15 +33,26 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('GetBusCtrl', function($scope) {
+  $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 4 };
+  $scope.options = {
+    scrollwheel: false,
+    overviewMapControl: false,
+    panControl: false,
+    scaleControl: false,
+    scrollwheel: false,
+    mapTypeControl: false,
+    streetViewControl: false,
+    zoomControl: false
+  };
+  $scope.marker = {
+    id: 0,
+    coords: {
+      latitude: 40.1451,
+      longitude: -99.6680
+    },
+    options: { draggable: false },
+  };
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
