@@ -29,15 +29,24 @@ angular.module('busintime', ['ionic', 'busintime.controllers'])
     controller: 'LoginCtrl'
   })
 
-
-  .state('app', {
-    url: "/app",
+  .state('busintime', {
+    url: "/busintime",
     abstract: true,
     templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
+    controller: 'MenuCtrl'
   })
 
-  .state('app.search', {
+  .state('busintime.share', {
+    url: "/share",
+    views: {
+      'menuContent' : {
+        templateUrl: "templates/share.html",
+        controller: 'ShareCtrl'
+      }
+    }
+  })
+
+  .state('busintime.search', {
     url: "/search",
     views: {
       'menuContent': {
@@ -46,7 +55,7 @@ angular.module('busintime', ['ionic', 'busintime.controllers'])
     }
   })
 
-  .state('app.browse', {
+  .state('busintime.browse', {
     url: "/browse",
     views: {
       'menuContent': {
@@ -54,7 +63,7 @@ angular.module('busintime', ['ionic', 'busintime.controllers'])
       }
     }
   })
-    .state('app.playlists', {
+    .state('busintime.playlists', {
       url: "/playlists",
       views: {
         'menuContent': {
@@ -64,7 +73,7 @@ angular.module('busintime', ['ionic', 'busintime.controllers'])
       }
     })
 
-  .state('app.single', {
+  .state('busintime.single', {
     url: "/playlists/:playlistId",
     views: {
       'menuContent': {

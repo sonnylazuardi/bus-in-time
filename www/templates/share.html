@@ -1,0 +1,27 @@
+<ion-view view-title="Share GPS" cache-view="false">
+  <ion-nav-bar class="bar-stable">
+    <button class="button button-icon ion-android-arrow-back">
+      Back
+    </button>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <div class="login share padding">
+      <p>You can help to track this bus <br> by activating your GPS</p>
+
+      <div class="logo-bus">
+        <img src="img/logo-bus.png" alt="">
+      </div>
+
+      <p class="coins">
+        you just got <span class="text-big">2000</span> coins <br>
+        from the <span class="text-big">50</span> km trip
+      </p>
+      <button class="button button-block button-positive" ng-click="start()">
+        Start
+      </button>
+      <button class="button button-block button-stable" ng-click="back()">
+        Back
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

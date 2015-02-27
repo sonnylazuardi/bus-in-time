@@ -50,7 +50,7 @@ angular.module('busintime.controllers', [])
 
 .controller('LoginCtrl', function($scope, $state) {
   $scope.login = function() {
-    $state.go('app.playlists');
+    $state.go('busintime.playlists');
   }
 })
 
@@ -58,4 +58,8 @@ angular.module('busintime.controllers', [])
   $scope.logout = function() {
     $state.go('login');
   }
+})
+
+.controller('ShareCtrl', function($scope, $state) {
+  
 });
