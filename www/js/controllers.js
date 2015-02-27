@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('busintime.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
   // Form data for the login modal
@@ -42,7 +42,20 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('LoginCtrl', function($scope, $state) {
+  $scope.login = function() {
+    $state.go('app.playlists');
+  }
+})
+
+.controller('MenuCtrl', function($scope, $state) {
+  $scope.logout = function() {
+    $state.go('login');
+  }
 });

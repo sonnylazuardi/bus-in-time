@@ -30,3 +30,53 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.logo {
+    height: 43px;
+    background-size: cover;
+}
+
+.menu {
+    .bar-stable {
+        border: none;
+    }
+    .scroll-content {
+        background: $stable;
+
+        .item, .item-content {
+            background-color: transparent !important;
+            border: none !important;
+            color: #fff;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .profile {
+            position: relative;
+            margin: 30px auto;
+            max-width: 100px;
+            height: 100px;
+            background: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            text-align: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+.login {
+    background: $stable;
+    height: 100%;
+}
+
+.logo-bit {
+    position: relative;
+    margin: 40px auto;
+    max-width: 200px;
+    height: 200px;
+    margin-top: 100px;
+    // margin-bottom: 10px;
+}
