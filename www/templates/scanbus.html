@@ -1,0 +1,23 @@
+<ion-view view-title="Get Your Bus">
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="scan()">
+        <i class="icon ion-load-c" ng-show="loading"></i> Scan 
+      </button>
+    </ion-nav-buttons>    
+    <ion-content class='content-red'>
+
+        <div class="list">
+            <div class="item item-icon-left" ng-repeat="device in devices">
+                <i class="icon ion-android-bus text-stable"></i>
+                <h2>{{device.id}}</h2>
+                <h2 class='text-right'><i class="ion-clock"></i> {{device.rssi}}</h2>
+            </div>
+        </div>
+
+        <div class="list" ng-show="errors.length > 0">
+            <div class="item item-icon-left" ng-repeat="error in errors">
+                <h2>{{error}}</h2>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

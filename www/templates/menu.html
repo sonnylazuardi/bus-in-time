@@ -27,16 +27,22 @@
           </div>
           <div class="points">
             <span class="text-big">2000</span> coins <br>
-            in <span class="text-big">50</span> km 
+            in total <span class="text-big">10</span> minutes 
           </div>
         </div>
       </div>
       <ion-list>
-        <ion-item nav-clear menu-close ref="busintime.playlists">
-          <a class="button button-icon icon-left ion-help-circled">About</a>
+        <ion-item nav-clear menu-close ui-sref="busintime.getbus">
+          <a class="button button-icon icon-left ion-android-bus">Find Bus</a>
         </ion-item>
-        <ion-item nav-clear menu-close ui-sref="busintime.share">
+        <ion-item nav-clear menu-close ui-sref="busintime.scanbus">
+          <a class="button button-icon icon-left ion-bluetooth">Scan Bus</a>
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="share">
           <a class="button button-icon icon-left ion-android-share-alt">Share</a>
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="about">
+          <a class="button button-icon icon-left ion-help-circled">About</a>
         </ion-item>
         <ion-item nav-clear menu-close ng-click="logout()">
           <a class="button button-icon icon-left ion-android-exit">Logout</a>

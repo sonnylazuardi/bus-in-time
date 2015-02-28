@@ -110,17 +110,43 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
 })
 
 .controller('MenuCtrl', function($scope, $state) {
+
   $scope.logout = function() {
     $state.go('login');
   }
 })
 
-.controller('ShareCtrl', function($scope, $state, $ionicHistory) {
+.controller('ShareCtrl', function($scope, $state) {
   $scope.back = function() {
-    console.log('back');
-    $ionicHistory.goBack();
+    window.history.back();
   }
   $scope.start = function() {
 
+  }
+})
+
+.controller('ScanBusCtrl', function($scope, $state, BLE) {
+  $scope.devices = [];
+  $scope.loading = false;
+  $scope.errors = [];
+  $scope.scan = function() {
+    $scope.loading = true;
+    $scope.errors = [];
+    $scope.devices = [];
+    BLE.scan().then(function (devices) {
+      console.log(devices);
+      $scope.devices = devices;
+      $scope.loading = false;
+    }, function (error) {
+      $scope.errors.push(error);
+      $scope.loading = false;
+    });
+  }
+  
+})
+
+.controller('AboutCtrl', function($scope) {
+  $scope.back = function() {
+    window.history.back();
   }
 });

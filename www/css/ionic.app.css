@@ -7476,6 +7476,9 @@ a.button {
   max-width: 200px;
   height: 300px;
   margin-top: 80px; }
+  .logo-bit.about {
+    margin-top: 20px;
+    margin-bottom: 40px; }
 
 .angular-google-map-container {
   height: 150px; }
@@ -7562,3 +7565,9 @@ a.button {
 
 .coins {
   margin-bottom: 40px; }
+
+.button.icon-left:before {
+  float: left;
+  padding-right: 0.6em;
+  padding-left: 0;
+  width: 40px; }

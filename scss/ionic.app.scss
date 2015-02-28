@@ -164,6 +164,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     height: 300px;
     margin-top: 80px;
     // margin-bottom: 10px;
+    &.about {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 }
 
 .angular-google-map-container { height: 150px; }
@@ -229,4 +233,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .coins {
     margin-bottom: 40px;
+}
+.button.icon-left:before {
+    float: left;
+    padding-right: 0.6em;
+    padding-left: 0;
+    width: 40px;
 }
