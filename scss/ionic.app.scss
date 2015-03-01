@@ -223,6 +223,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .text-royal             {color : $royal}
 .text-dark              {color : $dark}
 
+.text-arial				{font-family: "Arial", sans-serif !important;}
+
 .pull-left              {float: left}
 .pull-right             {float: right}
 
@@ -234,6 +236,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .coins {
     margin-bottom: 40px;
 }
+
 .button.icon-left:before {
     float: left;
     padding-right: 0.6em;

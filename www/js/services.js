@@ -1,5 +1,75 @@
 angular.module('busintime.services', [])
 
+.service('TrackList', function() {
+  var self = this;
+  self.track = [
+    {
+      id: 1,
+      from : "Cicaheum",
+      fromCode : "CCH",
+      to : "Cibeureum",
+      toCode: 'CBR',
+      time : {min : 4, sec : 21},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      id: 2,
+      to : "Cicaheum",
+      toCode: 'CCH',
+      from : "Cibeureum",
+      fromCode: 'CBR',
+      time : {min : 8, sec : 15},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      id: 3,
+      from : "Cicaheum",
+      fromCode: 'CCH',
+      to : "Leuwi Panjang",
+      toCode: 'LWP',
+      time : {min : 5, sec : 25},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      id: 4,
+      from : "Leuwi Panjang",
+      fromCode: 'LWP',
+      to : "Cicaheum",
+      toCode: 'CCH',
+      time : {min : 8, sec : 31},
+      type : "Ekonomi / AC",
+      price : "Rp 2.000,- (Eko) / Rp 3.500 (AC)"
+    },
+    {
+      id: 5,
+      from : "Cibiru",
+      fromCode: 'CBU',
+      to : "Kebon Kelapa",
+      toCode: 'KBL',
+      time : {min : 1, sec : 22},
+      type : "AC",
+      price : "Rp 3.500"
+    },
+    {
+      id: 6,
+      from : "Kebon Kelapa",
+      fromCode: 'KBL',
+      to : "Cibiru",
+      toCode: 'CBU',
+      time : {min : 6, sec : 21},
+      type : "AC",
+      price : "Rp 3.500"
+    },
+  ];
+  self.findById = function(track) {
+    return _.findWhere(self.track, {id: parseInt(track)});
+  }
+  return self;
+})
+
 .service('BLE', function($q, $timeout) {
   var self = this;
   var app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;

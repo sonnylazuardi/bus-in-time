@@ -33,8 +33,12 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
   };
 })
 
-.controller('GetBusCtrl', function($scope) {
+.controller('GetBusCtrl', function($scope, TrackList) {
+
   $scope.map = {center: {latitude: 40.1451, longitude: -99.6680 }, zoom: 15 };
+
+  $scope.trayeks = TrackList.track;
+
   $scope.options = {
     scrollwheel: false,
     overviewMapControl: false,
@@ -45,6 +49,7 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     streetViewControl: false,
     zoomControl: false
   };
+
   $scope.marker = {
     id: 0,
     coords: {
@@ -53,12 +58,72 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     },
     options: { draggable: false },
   };
+
+  var a = setInterval(function () {
+    for (var i = $scope.trayeks.length - 1; i >= 0; i--) {
+      if ($scope.trayeks[i].time.sec > 0) {
+        $scope.trayeks[i].time.sec--;
+      }
+      else {
+        if ($scope.trayeks[i].time.min > 0) {
+          $scope.trayeks[i].time.sec = 59;  
+          $scope.trayeks[i].time.min--;
+        }
+        else {
+          // do nothing
+        }
+      }
+      // console.log($scope.trayeks[i].time);
+    };
+    $scope.$apply();
+  }, 1000);
+
+  $scope.numbering = function(num) {
+    if (num<10) {
+      return '0'+num;
+    }
+    return num
+  }
+
+  $scope.$destroy = function() {
+    clearInterval(a);
+  }
+
 })
 
-.controller('BusTrackCtrl', function($scope) {
+.controller('BusTrackCtrl', function($scope, TrackList, $stateParams, $rootScope, $state, $cordovaLocalNotification) {
+  $scope.trayek = TrackList.findById($stateParams.track);
+  $scope.notif = function() {
+    $cordovaLocalNotification.add({
+      id: new Date(),
+      date:       new Date(),    // This expects a date object
+      message:    'You are now in a Bus Pink! share your location and collect some coins',  // The message that is displayed
+      title:      'Bus In Time',  // The title of the message
+    }).then(function () {
+      console.log('callback for adding background notification');
+    });
+  }
+  $rootScope.$on("$cordovaLocalNotification:clicked", function(e,notification) {
+    $state.go('share', {track: $stateParams.track});
+  });
+  var a = setInterval(function () {
+    if ($scope.trayek.time.sec > 0) {
+      $scope.trayek.time.sec--;
+    }
+    else {
+      if ($scope.trayek.time.min > 0) {
+        $scope.trayek.time.sec = 59;  
+        $scope.trayek.time.min--;
+      }
+    };
+    $scope.$apply();
+  }, 1000);
+  console.log($stateParams.track);
+  console.log($scope.trayek);
   $scope.pin = {
     bus : "img/pin-bus.png",
-    passenger : "img/pin-passenger.png"
+    passenger : "img/pin-passenger.png",
+    halte : "img/pin-halte.png"
   };
 
   $scope.map = {center: {latitude: -6.902267, longitude: 107.611600 }, zoom: 16 };
@@ -81,6 +146,15 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     options: { draggable: false },
   };
 
+  $scope.marker_halte = {
+    id: 3,
+    coords: {
+      latitude: -6.89900,
+      longitude: 107.610605
+    },
+    options: { draggable: false },
+  };
+
   $scope.marker_bus1 = {
     id: 1,
     coords: {
@@ -98,6 +172,17 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
     },
     options: { draggable: false },
   };
+
+  $scope.$destroy = function() {
+    clearInterval(a);
+  }
+
+  $scope.numbering = function(num) {
+    if (num<10) {
+      return '0'+num;
+    }
+    return num
+  }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
@@ -116,12 +201,39 @@ angular.module('busintime.controllers', ['uiGmapgoogle-maps'])
   }
 })
 
-.controller('ShareCtrl', function($scope, $state) {
+.controller('ShareCtrl', function($scope, $state, $cordovaLocalNotification, $stateParams, TrackList) {
+  $scope.trayek = TrackList.findById($stateParams.track);
+  $scope.state = 0;
+  // $cordovaLocalNotification.add({
+  //   id: new Date(),
+  //   date:       new Date(),    // This expects a date object
+  //   message:    'You are now in a bus please share the GPS and get some coins',  // The message that is displayed
+  //   title:      'Bus In Time',  // The title of the message
+  // }).then(function () {
+  //   console.log('callback for adding background notification');
+  // });
   $scope.back = function() {
     window.history.back();
   }
+  $scope.numbering = function(num) {
+    if (num<10) {
+      return '0'+num;
+    }
+    return num
+  }
   $scope.start = function() {
-
+    $scope.state = 1;
+    $cordovaLocalNotification.add({
+      id: new Date(),
+      date:       new Date(),    // This expects a date object
+      message:    'Your location has been shared!',  // The message that is displayed
+      title:      'Bus In Time',  // The title of the message
+    }).then(function () {
+      console.log('callback for adding background notification');
+    });
+  }
+  $scope.stop = function() {
+    $scope.state = 0;
   }
 })
 

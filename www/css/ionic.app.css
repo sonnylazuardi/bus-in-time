@@ -7553,6 +7553,9 @@ a.button {
 .text-dark {
   color: #444; }
 
+.text-arial {
+  font-family: "Arial", sans-serif !important; }
+
 .pull-left {
   float: left; }
 

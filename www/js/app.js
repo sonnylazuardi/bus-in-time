@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('busintime', ['ionic', 'busintime.controllers', 'busintime.services', 'uiGmapgoogle-maps'])
+angular.module('busintime', ['ionic', 'ngCordova', 'busintime.controllers', 'busintime.services', 'uiGmapgoogle-maps'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -37,7 +37,7 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'busintime.servic
   })
 
   .state('share', {
-    url: "/share",
+    url: "/share/:track",
     templateUrl: "templates/share.html",
     controller: 'ShareCtrl'
   })
@@ -58,7 +58,7 @@ angular.module('busintime', ['ionic', 'busintime.controllers', 'busintime.servic
   })
 
   .state('busintime.bustrack', {
-    url: "/bustrack",
+    url: "/bustrack/:track",
     views: {
       'menuContent': {
         templateUrl: "templates/bustrack.html",
