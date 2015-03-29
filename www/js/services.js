@@ -1,5 +1,6 @@
 angular.module('busintime.services', [])
 
+
 .factory('Halte', function($http, $q) {
   var self = this;
   self.halte = [];
