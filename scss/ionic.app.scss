@@ -14,19 +14,14 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-$goodism-red        : #ad3f42;
-$goodism-green      : #2e8e69;
-$goodism-blue       : #2672b3;
-$goodism-orange     : #fbae46;
-$goodism-grey       : #383b44;
-$goodism-light-grey : #ccc;
 
-$stable:                          #00a692 !default;
+$stable:                          #e74c3c !default;
+$stable-dark:					  #c0392b !default;
 $button-stable-bg:                $stable !default;
-$button-stable-text:              #000 !default;
-$button-stable-border:            #007662 !default;
-$button-stable-active-bg:         #009682 !default;
-$button-stable-active-border:     #005642 !default;
+$button-stable-text:              #fff !default;
+$button-stable-border:            #e95c4e !default;
+$button-stable-active-bg:         #e74c3c !default;
+$button-stable-active-border:     #e95c4e !default;
 
 $button-light-active-border:      transparent !default;
 
@@ -36,7 +31,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-// Include font
 @font-face {
     font-family: 'Raleway';
     src: url('../fonts/Raleway-Thin_0.ttf')  format('truetype');
@@ -100,302 +94,127 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     font-style: normal;
 }
 
-
-
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Light.ttf')  format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Light Italic.ttf')  format('truetype');
-    font-weight: 100;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Regular.ttf')  format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Regular Italic.ttf')  format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Bold.ttf')  format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Bold Italic.ttf')  format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Extra Bold.ttf')  format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Extra Bold Italic.ttf')  format('truetype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Black.ttf')  format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Respublika';
-    src: url('../fonts/Respublika FY Black Italic.ttf')  format('truetype');
-    font-weight: 900;
-    font-style: italic;
-}
-
 * {
-    font-family: 'Raleway';
+    font-family: 'Raleway' !important;
 }
 
-.bar.bar-stable {
-    background-color: $stable;
-    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
-    color: #444;
-    border: none;
-    background-image: none;
-    
-    .button {
-        color: $light;
-    }
-
-    .title {
-        color: #fff;
-    }
-
+.logo {
+    height: 43px;
+    background-size: cover;
 }
 
-.button {
-
-    &.button-stable {
-        
-        border-color: transparent;
-        color: #fff;
-
+.menu {
+    .bar-stable {
+        border: none;
     }
+    .scroll-content {
+        background: $stable-dark;
 
-}
-
-.tab-item  {
-    .icon {
-        color: #fff;
-    }
-    .tab-title {
-        color: #fff;
-    }
-}
-
-.tabs-striped .tabs {
-    background: $stable;
-    border-width: 0;
-
-    .tab-item {
-        &.tab-item-active {
-            border-color: #fff !important;
-            border-width: 0px 0px 4px 0px !important;
+        .item, .item-content {
+            background-color: transparent !important;
+            border: none !important;
+            color: #fff;
+            padding-top: 0;
+            padding-bottom: 0;
         }
-        &.activated {
-            border-color: #fff !important;
-        }
-    }
-}
 
-.headline {
-    background: url(../img/pattern-1.jpg);
-    // display: block !important;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    // padding-left: 15px;
+        .profile {
+            position: relative;
+            margin: 30px auto;
+            max-width: 100px;
+            height: 100px;
+            background: #ccc;
+            margin-bottom: 10px;
+            border-radius: 50%;
 
-    h1,h2,h3,h4,h5,h6 {
-        // display: block;
-        width: 100%;
-        line-height: 15px;
-    }
-
-    .button-hanging {
-        position : absolute;
-        left : 100%;
-        top : 100%;
-    }
-
-    .left-arrow {
-        float: left;
-    }
-
-    .right-arrow {
-        float: right;
-    }
-
-    .left-arrow, .right-arrow {
-        font-size: 1.3em;
-        margin-top: 7px;
-    }
-
-    .switch-view {
-        font-size: 1.7em;
-        position: absolute;
-        right: 20px;
-        top: 10px;
-    }
-}
-
-.slider {
-  height: 100%;
-}
-.slider-slide {
-  padding-top: 80px;
-  background-color: $stable;
-  color: #fff;
-  text-align: center;
-
-}
-
-.item-input {
-    background: #fff;
-}
-
-.input-label {
-    text-align: left;
-}
-.input-small {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-}
-.input-right {
-    text-align: right !important;
-}
-/*
-
-.item-content{
-  width: 100% !important;
-  padding-right: 15px !important;
-}
-
-.item-content{
-    display: -webkit-box !important;
-    display: -moz-box !important;
-    display: -ms-flexbox !important;
-    display: -webkit-flex !important;
-    display: flex !important;
-
-    -webkit-box-direction: normal !important;
-    -moz-box-direction: normal !important;
-    -webkit-box-orient: horizontal !important;
-    -moz-box-orient: horizontal !important;
-    -webkit-flex-direction: row !important;
-    -ms-flex-direction: row !important;
-    flex-direction: row !important;
-
-    -webkit-box-pack: justify  !important;
-    -moz-box-pack: justify  !important;
-    -webkit-justify-content: space-between !important;
-    -ms-flex-pack: justify !important;
-    justify-content: space-between !important;
-    -webkit-align-content: stretch !important;
-    -ms-flex-line-pack: stretch !important;
-    align-content: stretch !important;
-
-    -webkit-box-align: center !important;
-    -moz-box-align: center !important;
-    -webkit-align-items: center !important;
-    -ms-flex-align: center !important;
-    align-items: center !important;
-
-
-    .badge{
-        position:initial !important;
-        display: inline !important;
-        top: initial !important;
-        right: initial !important;
-    }
-
-}*/
-
-.history-item {
-    .item-history {
-        .item-history-value {
-            overflow: visible;
-
-            .item-history-time {
-                font-size: 1em;
-                margin-right: -30px;
-                color: $stable;
+            img {
+                width: 100%;
+                border-radius: 50%;
             }
         }
+
+        .name {
+            text-align: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+        .points {
+            text-align: center;
+            color: #fff;
+            padding-bottom: 20px;
+        }
     }
 }
 
-.row-chart {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+.login {
+    background: $stable;
+    height: 100%;
 }
 
-.row-chart-legend, .row-stat {
-    margin-top: 5px !important;
+.share {
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
 }
 
-.chart-legend {
-    margin-left: 5px;
-    margin-right: 5px;
-    h1,h2,h3,h4,h5,h6,p,small {
-        text-align: center;
+.logo-bit {
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+    height: 300px;
+    margin-top: 80px;
+    // margin-bottom: 10px;
+    &.about {
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
-    h1,h2,h3,h4,h5,h6 {
-        color : white;
-    }
-    p, small {
-        color : black;
-    }
-}
-
-.item-icon-left.item-input {
-    .input-label, input, .text {
-        margin-left : 50px;
-    }
-    .text {
-        font-size: 14px;
-        padding: 4px 8px 3px 0;
-        line-height: 16px;
-    }
-    .icon {
-        margin-top : 10px;
+    img {
+        width: 100%;
     }
 }
 
-.action-sheet-group .button {
-    border: none;
-    border-top: 1px solid $goodism-light-grey;
+.angular-google-map-container { height: 200px; }
+
+.content-fullscreen {
+	.scroll { height: 100%;}
+	.angular-google-map { height: 100%; }
+	.angular-google-map-container {height: 100vh;}
 }
+
+.marker-labels {
+    color: red;
+    background-color: white;
+    font-family: "Lucida Grande", "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 40px;
+    border: 1px solid black;
+    white-space: nowrap;
+}
+.angular-google-map {
+	display: block;
+}
+.content-red {
+	background-color: $stable;
+}
+
+.footer-track {
+	background-color: $stable;
+	height: 100px;
+	padding: 10px;
+	* {
+		color: white;
+		text-align: center;
+	}
+	h2 {
+		line-height: 20px;
+	}
+}
+
+.text-left              {text-align: left}
+.text-right             {text-align: right}
+.text-center            {text-align: center}
 
 .text-light             {color : $light}
 .text-stable            {color : $stable}
@@ -407,46 +226,36 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .text-royal             {color : $royal}
 .text-dark              {color : $dark}
 
-.text-goodism-red       {color : $goodism-red}
-.text-goodism-green     {color : $goodism-green}
-.text-goodism-blue      {color : $goodism-blue}
-.text-goodism-orange    {color : $goodism-orange}
-.text-goodism-grey      {color : $goodism-grey}
-
-.text-left              {text-align: left}
-.text-right             {text-align: right}
-.text-center            {text-align: center}
-
-.block-goodism-red {
-    display: block;
-    background: $goodism-red;
-    color : white;
-}
-.block-goodism-green {
-    display: block;
-    background: $goodism-green;
-    color : white;
-}
-.block-goodism-blue {
-    display: block;
-    background: $goodism-blue;
-    color : white;
-}
-.block-goodism-orange {
-    display: block;
-    background: $goodism-orange;
-    color : white;
-}
-.block-goodism-grey {
-    display: block;
-    background: $goodism-grey;
-    color : white;
-}
-.block-goodism-light-grey {
-    display: block;
-    background: $goodism-light-grey;
-    color : black;
-}
+.text-arial				{font-family: "Arial", sans-serif !important;}
 
 .pull-left              {float: left}
 .pull-right             {float: right}
+
+.text-big {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.coins {
+    margin-bottom: 40px;
+}
+
+.button.icon-left:before {
+    float: left;
+    padding-right: 0.6em;
+    padding-left: 0;
+    width: 40px;
+}
+
+.leaderboard {
+    .profile {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 10px;
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+}

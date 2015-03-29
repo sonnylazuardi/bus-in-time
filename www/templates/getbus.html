@@ -1,0 +1,24 @@
+<ion-view view-title="Find Bus">
+	<ion-content class='content-red'>
+
+		<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+			<ui-gmap-marker coords="marker.coords" idkey="marker.id" options="marker.options"></ui-gmap-marker>
+			<ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="'onClick'" options="'options'" events="'events'">
+                <ui-gmap-windows show="show">
+                    <div ng-non-bindable>
+                        <div><strong ng-bind-html="title"></strong></div>
+                        <div><a href="#/" class="button button-small button-balanced">View Bus</a></div>
+                    </div>
+                </ui-gmap-windows>
+            </ui-gmap-markers>
+		</ui-gmap-google-map>
+
+		<div class="list">
+			<a class="item item-icon-left" href="#/busintime/bustrack/{{trayek.id}}" ng-repeat="trayek in trayeks">
+				<i class="icon ion-android-bus text-stable"></i>
+				<h2>{{trayek.from}} > {{trayek.to}}</h2>
+				<h2 class='text-right text-arial'><i class="ion-clock"></i> {{numbering(trayek.time.min)}}:{{numbering(trayek.time.sec)}}</h2>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

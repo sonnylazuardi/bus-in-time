@@ -1,0 +1,22 @@
+<ion-view view-title="Leaderboard">
+
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>      
+  </ion-nav-bar>
+
+  <ion-content class='content-red'>
+
+    <div class="list">
+      <a class="item item-icon-left leaderboard" href="#" ng-repeat="leaderboard in leaderboards">
+        <div class="profile">
+          <img ng-src="{{leaderboard.avatar}}" alt="">
+        </div>
+        <h2>{{leaderboard.name}}</h2>
+        <h2 class='text-right text-arial'><i class="ion-trophy"></i> {{leaderboard.score}}</h2>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
